@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { MoviesContext } from "../contexts/MoviesContext";
 import { MovieCard } from "./MovieCard";
 
 interface ContentProps {
@@ -19,7 +21,9 @@ interface ContentProps {
   }>;
 }
 
-export function Content({ selectedGenre, movies }: ContentProps) {
+export function Content() {
+  const {movies, selectedGenre} = useContext(MoviesContext);
+
   return (
     <div className="container">
       <header>
